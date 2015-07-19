@@ -54,12 +54,12 @@ let s:V = vital#of('vital')
 let s:assert = s:V.import('ExeAssert').make()
 
 function! s:modulo_test(n) abort
-  exec s:assert.is_number(a:n)
+  exe s:assert.is_number(a:n)
   let m = a:n % 3
   if m ==# 0
   elseif m ==# 1
   else
-    exec s:assert.equals(m, 2, printf('assume %d %% 3 == 2, but...???', a:n))
+    exe s:assert.equals(m, 2, printf('assume %d %% 3 == 2, but...???', a:n))
   endif
 endfunction
 
