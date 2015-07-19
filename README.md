@@ -7,6 +7,8 @@ Yet another assertion library for Vim script
 - You can leave assertions in production code because it doesn't execute assertions in production code by default
 - But, Vim script doesn't have lazy evaluation feature, so arguments of assert functions will be evaluated even if assertions doesn't run.
 - Use `:exe` (`:execute`) instead of `:call` to execute assertions
+- See `:h themis-helper-assert` for available assert functions
+- TODO: help document
 
 Installation
 ------------
