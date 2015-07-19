@@ -79,6 +79,14 @@ endfunction
 " :%s/\vs:\zs(equals|match|type|check_type|failure)\ze\(/_\0/g
 " :%s/\vcall \zss:assert_(\w+)/self.\1/g
 
+function! s:assert.fail(mes) abort
+  throw s:_failure([a:mes], [])
+endfunction
+
+function! s:assert.todo(...) abort
+  throw 'AssertionError: todo: ' . s:_build_message(a:0 ? a:1 : 'TODO')
+endfunction
+
 function! s:assert.true(value, ...) abort
   if a:value isnot 1
     throw s:_failure([
